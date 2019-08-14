@@ -1,7 +1,8 @@
 {
     "name": "TestCode",
     "references": [
-        "GameCode"
+        "GameCode",
+        "Mirror"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
