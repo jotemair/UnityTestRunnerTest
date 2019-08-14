@@ -242,6 +242,7 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 1873148100836441303, guid: fc11d6931025b544cbb169aa952114a8, type: 3}
+  - {fileID: 3495446584693798133, guid: 6798926b749c8cf469eaee913a9918ad, type: 3}
 --- !u!1 &1826304800
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,8 +319,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826304800}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -17}
+  m_LocalRotation: {x: 0.15625164, y: 0.00000008483434, z: -0.000000013420343, w: 0.98771733}
+  m_LocalPosition: {x: -0.0000016339081, y: 4.0866494, z: -16.51171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
