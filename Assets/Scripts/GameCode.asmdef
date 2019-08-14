@@ -1,7 +1,8 @@
 {
     "name": "GameCode",
     "references": [
-        "Mirror"
+        "Mirror",
+        "Cinemachine"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

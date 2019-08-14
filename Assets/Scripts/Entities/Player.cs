@@ -6,12 +6,27 @@ using Mirror;
 
 public class Player : NetworkBehaviour
 {
+    public Transform attachPoint = null;
+    public Camera attachedCamera = null;
+
     public float speed = 10f, jump = 10f;
     public LayerMask ignoreLayers;
     public float rayDistance = 10f;
     public bool isGrounded = false;
     private Rigidbody rigid;
     #region Unity Events
+    public void OnDestroy()
+    {
+        if (null != attachedCamera)
+        {
+            Destroy(attachedCamera.gameObject);
+        }
+
+        if (null != attachPoint)
+        {
+            Destroy(attachPoint.gameObject);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -20,6 +35,21 @@ public class Player : NetworkBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
+
+        attachPoint.SetParent(null);
+        attachedCamera.transform.SetParent(null);
+        if (isLocalPlayer)
+        {
+            attachedCamera.enabled = true;
+            //attachedCamera.rect = new Rect(0f, 0f, 0.5f, 1f);
+            attachPoint.gameObject.SetActive(true);
+        }
+        else
+        {
+            attachedCamera.enabled = false;
+            //attachedCamera.rect = new Rect(0.5f, 0f, 0.5f, 1f);
+            attachPoint.gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
