@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraOrbit : MonoBehaviour
 {
@@ -8,10 +6,12 @@ public class CameraOrbit : MonoBehaviour
     public float xSpeed = 120.0f, ySpeed = 120.0f;  // X & Y orbit speed
     public float minYAngle = -20f, maxYAngle = 80f; // minimum & maximum Y limit
     private Vector3 euler;
+
     private void Start()
     {
         euler = transform.eulerAngles;
     }
+
     private void LateUpdate()
     {
         euler.x -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
