@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Mirror;
-
-public class Player : NetworkBehaviour
+public class Player : MonoBehaviour
 {
     public float speed = 10f, jump = 10f;
     public LayerMask ignoreLayers;
@@ -37,15 +35,12 @@ public class Player : NetworkBehaviour
     }
     private void Update()
     {
-        if (isLocalPlayer)
+        float inputH = Input.GetAxis("Horizontal");
+        float inputV = Input.GetAxis("Vertical");
+        Move(inputH, inputV);
+        if (Input.GetButtonDown("Jump"))
         {
-            float inputH = Input.GetAxis("Horizontal");
-            float inputV = Input.GetAxis("Vertical");
-            Move(inputH, inputV);
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
-            }
+            Jump();
         }
     }
     #endregion

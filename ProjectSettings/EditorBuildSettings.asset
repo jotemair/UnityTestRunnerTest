@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Offline.unity
-    guid: 8212b12397f4e8d47ac9b4f25a26266b
-  - enabled: 1
-    path: Assets/Scenes/Online.unity
-    guid: f5c1c61cd96c9c542846892e6b8beca7
+  m_Scenes: []
   m_configObjects: {}
