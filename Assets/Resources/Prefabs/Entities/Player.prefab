@@ -126,8 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
-  bombPrefab: {fileID: 3495446584693798133, guid: 6798926b749c8cf469eaee913a9918ad,
-    type: 3}
   attachPoint: {fileID: 7109672953816707334}
   attachedCamera: {fileID: 1384853462880276049}
   speed: 10

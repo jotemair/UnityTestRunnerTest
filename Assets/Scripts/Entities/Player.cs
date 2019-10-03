@@ -6,8 +6,6 @@ using Mirror;
 
 public class Player : NetworkBehaviour
 {
-    public GameObject bombPrefab = null;
-
     public Transform attachPoint = null;
     public Camera attachedCamera = null;
 
@@ -77,29 +75,11 @@ public class Player : NetworkBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 Jump();
-                DropBomb();
             }
         }
     }
     #endregion
-
-    #region Commands
-
-    [Command]
-    public void Cmd_SpawnBomb(Vector3 pos)
-    {
-        GameObject bomb = Instantiate(bombPrefab, pos, Quaternion.identity);
-        NetworkServer.Spawn(bomb);
-    }
-
-    #endregion
-
     #region Custom
-
-    public void DropBomb()
-    {
-        Cmd_SpawnBomb(transform.position);
-    }
     public void Jump()
     {
         if (isGrounded)
